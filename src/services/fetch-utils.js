@@ -7,3 +7,11 @@ export async function getDogs() {
 
   return checkError(resp);
 }
+
+export async function getPlants() {
+  const resp = await client
+    .from('plants')
+    .select();
+
+  return checkError(resp);
+}
