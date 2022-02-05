@@ -46,7 +46,7 @@ function App() {
         <PlantsList planty={plants}/>
       </div>
       <div>
-        <BooksList books={books} />
+        <BooksList book={books} />
       </div>
   
     </div>
