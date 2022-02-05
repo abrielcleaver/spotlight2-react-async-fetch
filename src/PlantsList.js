@@ -1,17 +1,14 @@
 import React from 'react';
 import PlantItem from './PlantItem';
-
-export default function PlantsList({ plants }) {
+export default function PlantsList({ planty }) {
   return <div>
-    <h3 className="plant-info">Check out these plants!</h3>
-    <div className="plant-list">
-      {plants.map((plant, i) => 
-        <PlantItem
-          key={`${plant}-${i}`} plants={plants}
-        />
-      )}
-    </div>
-
+    <h2 className="plant-info"> Check out these plants!</h2>
+    {planty.map((plant, i) => 
+      <PlantItem
+        plant={plant}
+        key={`${plant}-${i}`} 
+      />
+    )}
   </div>;
 }
 

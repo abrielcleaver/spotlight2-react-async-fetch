@@ -18,19 +18,14 @@ function App() {
 //   // If the array is empty, useEffect is called once on load
 //   // if something is in the array, the useEffect callback gets called whenever what's inside the array changes.
   }
-  useEffect(() => {
-    fetchAndStoreDogs();
-  }, []);
-
   async function fetchAndStorePlants() {
     const data = await getPlants();
     setPlants(data);
   }
   useEffect(() => {
+    fetchAndStoreDogs();
     fetchAndStorePlants;
-  
   }, []);
-  
 
   return (
     <div className="App">
@@ -38,8 +33,9 @@ function App() {
         <DogsList doggies={dogs}/>
       </div>
       <div>
-        <PlantsList plants={plants}/>
+        <PlantsList planty={plants}/>
       </div>
+  
     </div>
   );
 }
