@@ -6,6 +6,8 @@ import { getDogs, getPlants } from './services/fetch-utils';
 // import your arrays here
 import DogsList from './DogsList';
 import PlantsList from './PlantsList';
+import BooksList from './BooksList';
+
 
 function App() {
   const [dogs, setDogs] = useState([]);
@@ -34,6 +36,9 @@ function App() {
       </div>
       <div>
         <PlantsList planty={plants}/>
+      </div>
+      <div>
+        <BooksList />
       </div>
   
     </div>

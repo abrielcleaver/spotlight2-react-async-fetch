@@ -15,3 +15,11 @@ export async function getPlants() {
 
   return checkError(resp);
 }
+
+export async function getBooks() {
+  const resp = await client
+    .from('books')
+    .select();
+
+  return checkError(resp);
+}
