@@ -23,3 +23,11 @@ export async function getBooks() {
 
   return checkError(resp);
 }
+
+export async function getCats() {
+  const resp = await client
+    .from('cats')
+    .select();
+
+  return checkError(resp);
+}

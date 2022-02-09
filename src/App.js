@@ -2,17 +2,20 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 // Import the fetch function into App.js
-import { getBooks, getDogs, getPlants } from './services/fetch-utils';
+import { getBooks, getDogs, getPlants, getCats } from './services/fetch-utils';
 // import your arrays here
 import DogsList from './DogsList';
 import PlantsList from './PlantsList';
 import BooksList from './BooksList';
+import CatsList from './CatsList';
 
 
 function App() {
   const [dogs, setDogs] = useState([]);
   const [plants, setPlants] = useState([]);
   const [books, setBooks] = useState([]);
+  const [cats, setCats] = useState([]);
+
 
   async function fetchAndStoreDogs() {
     const data = await getDogs();
@@ -31,10 +34,16 @@ function App() {
     setBooks(data);
   }
 
+  async function fetchAndStoreCats() {
+    const data = await getCats();
+    setCats(data);
+  }
+
   useEffect(() => {
     fetchAndStoreDogs();
     fetchAndStorePlants();
     fetchAndStoreBooks();
+    fetchAndStoreCats();
   }, []);
 
   return (
@@ -47,6 +56,9 @@ function App() {
       </div>
       <div>
         <BooksList book={books} />
+      </div>
+      <div>
+        <CatsList kittens={cats} />
       </div>
   
     </div>
